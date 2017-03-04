@@ -1,0 +1,33 @@
+/* app css stylesheet */
+
+table{
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+th{
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+td{
+	border: 1px solid black;
+}
+
+.arrow-up{
+	width: 0;
+	height: 0;
+	border-left:5px solid transparent; 
+	border-right:5px solid transparent;
+	border-bottom:5px solid black;
+	display: inline-block;
+}
+
+.arrow-down{
+	width: 0;
+	height: 0;
+	border-left:5px solid transparent; 
+	border-right:5px solid transparent;
+	border-top:5px solid black;
+	display: inline-block;
+}

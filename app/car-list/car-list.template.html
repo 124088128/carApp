@@ -1,0 +1,41 @@
+
+<!-- a search box that filtering the database within customer entering input -->
+<p>
+  Search:
+  <input ng-model = "query"/>
+</p>
+
+<table >
+  <!-- add the click function for each cloumn in the table, by clicking the table
+  header, the sort order will change  -->
+  <th ng-click="sortData('mileage')">
+    Mileage <div ng-class="getSortClass('mileage')"> </div>
+  </th>
+  <th ng-click="sortData('name')">
+    name <div ng-class="getSortClass('name')"> </div>
+  </th>
+  <th ng-click="sortData('model')">
+    model <div ng-class="getSortClass('model')"> </div>
+  </th>
+  <th ng-click="sortData('engine')">
+    engine <div ng-class="getSortClass('engine')"> </div>
+  </th>
+  <th ng-click="sortData('color')">
+    color <div ng-class="getSortClass('color')"> </div>
+  </th>
+  <!-- display all the car data in the table, and add sort condition and filter condition -->
+  <tr ng-repeat = "car in cars | filter:query |orderBy:sortColumn:sortDescending" >
+    <!-- <td>car:{{$index+1}}</td> -->
+    <td>{{car.mileage | number}}</td>
+    <td>{{car.name | uppercase}}</td>
+    <td>{{car.model | uppercase}}</td>
+    <td>{{car.engine |lowercase}}</td>
+    <td>{{car.color | lowercase}}</td>
+  </tr>
+<!-- uncomment code just for check the status when sorting -->
+<p>ordered by:{{sortColumn}}</p>
+<p>sortDescending:{{sortDescending}}</p>
+
+<!-- <p>sorted:{{sorted}}</p> -->
+</table>
+
